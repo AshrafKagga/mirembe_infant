@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64px" height="64px" fill="#fff">
+  <!-- Graduation cap -->
+  <path d="M32 2L4 14l28 12 28-12L32 2z" fill="#4D4D4D"/>
+  <path d="M32 2L4 14v2l28 12 28-12v-2L32 2z" fill="#666666"/>
+
+  <!-- Cap tassel -->
+  <circle cx="32" cy="14" r="2" fill="#FFD700"/>
+  <path d="M32 14L12 23" stroke="#FFD700" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Head -->
+  <circle cx="32" cy="30" r="10" fill="#FAD4A2"/>
+
+  <!-- Body -->
+  <path d="M42 44c0 5.52-4.48 10-10 10s-10-4.48-10-10V38h20v6z" fill="#4D4D4D"/>
+  <path d="M22 38h20v4H22z" fill="#666666"/>
+
+  <!-- Shoulders -->
+  <path d="M42 38H22c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2z" fill="#666666"/>
+
+  <!-- Eyes -->
+  <circle cx="28" cy="28" r="1.5" fill="#333"/>
+  <circle cx="36" cy="28" r="1.5" fill="#333"/>
+
+  <!-- Mouth -->
+  <path d="M27 32c1.33 2 4.67 2 6 0" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+</svg>

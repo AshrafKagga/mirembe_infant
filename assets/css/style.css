@@ -778,14 +778,12 @@ About US page
 @media(max-width:992px){
   .mission{
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
   }
 }
-.mission-content {
+/* .mission-content {
   flex: 1;
   padding: 20px;
-}
+} */
 
 .mission-content h2 {
   font-size: 2.5rem;
@@ -796,10 +794,10 @@ About US page
   font-size: 1.2rem;
 }
 
-.mission-image {
+/* .mission-image {
   flex: 1;
   text-align: center;
-}
+} */
 
 .mission-image img {
   max-width: 100%;

@@ -52,6 +52,9 @@ header {
   padding: 20px 0;
   text-align: center;
   box-shadow: 0 0 5px rgba(112, 112, 112, 0.1);
+  position: static;
+  top: 0;
+  z-index: 1000;
 }
 
 header h1 {
@@ -77,15 +80,18 @@ nav ul {
   padding: 0;
 }
 @media (max-width: 992px) {
+  header{
+    position: static;
+  }
   header .mobile-navbar {
     display: block;
   }
   .logo{
     font-size: 18px;
   }
-  nav {
+  /* nav {
     display: none;
-  }
+  } */
   .nav-links {
     position: absolute;
     top: 60px;
@@ -97,7 +103,6 @@ nav ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: translateX(100%);
     transition: transform 0.5s ease-in-out;
   }
   nav ul {
@@ -121,6 +126,44 @@ nav ul li a {
   color: white;
   text-decoration: none;
   font-size: 0.81em;
+}
+/* Styles for mobile view */
+.mobile-navbar {
+  display: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    height: 80vh;
+    top: 70px;
+    right: 0;
+    background-color: #1c2237;
+    width: 100%;
+    display: none;
+    padding: 10px 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .mobile-navbar {
+    display: block;
+  }
 }
 
 /* hero styling */
@@ -163,6 +206,7 @@ nav ul li a {
 .btn-group {
   display: flex;
   gap: 20px;
+  justify-content: center;
 }
 
 .btn {
@@ -263,6 +307,11 @@ nav ul li a {
   gap: 20px;
   margin: 0 auto;
 }
+@media (max-width: 992px){
+  #features .container .card{
+    width:46%
+  }
+}
 
 .card {
   background-color: #1c2237;
@@ -276,6 +325,13 @@ nav ul li a {
 
 .card:hover {
   transform: translateY(-10px);
+}
+
+@media (max-width: 520px){
+  #features .container .card{
+    width:95%;
+    margin: 0 auto;
+  }
 }
 
 .icon-container {
@@ -293,7 +349,6 @@ nav ul li a {
 
 /* service section */
 .main-service {
-  /* background-color: #111c44; */
   color: #fff;
 }
 
@@ -303,6 +358,11 @@ nav ul li a {
   align-items: center;
   padding: 20px;
   /* background-color: #1b2857; */
+}
+@media(max-width:992px){
+.main-service .services{
+flex-direction: column;
+}
 }
 
 .services {
@@ -429,24 +489,28 @@ nav ul li a {
 .favorite-topics .topics {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+@media(max-width: 920px){
+
+  .favorite-topics .topics .topic{
+    width: 45%;
+  }
 }
 
 .favorite-topics .topic {
   background-color: #1c2a59;
-  padding: 20px 15px;
   border-radius: 10px;
-  width: 200px;
+  width: 24%;
   text-align: center;
-  /* height: 200px; */
-  /* display: flex;
-    flex-direction: column; */
 }
 
 .favorite-topics .topic img {
-  width: 50%;
+  width: 100%;
   height: auto;
   margin-bottom: 10px;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
 }
 
 .favorite-topics .topic h3 {
@@ -469,7 +533,12 @@ nav ul li a {
   grid-template-columns: 1fr 2fr;
   gap: 0 20px;
 }
-
+@media(max-width:992px){
+#programs .container .program {
+  grid: none;
+  gap: 20px
+}
+}
 #programs .container .program h3 {
   /* font-size: 18px; */
   margin-bottom: 10px;
@@ -501,7 +570,12 @@ nav ul li a {
   padding: 30px;
   height: 150px;
 }
-
+@media(max-width:768px){
+  #programs .container .program ul li {
+    padding: 10px;
+    height: 150px;
+  }
+}
 #programs .container .program ul li i {
   font-size: 38px;
 }
@@ -523,6 +597,18 @@ nav ul li a {
   gap: 1em;
   width: 90%;
   margin: 0 auto;
+}
+@media(max-width: 592px) {
+  #contact {
+    padding: 8px;
+    /* text-align: center; */
+  }
+  .contact-us{
+  grid-template-areas: "address address address address"
+  "email email phone phone"
+  "form form form form";
+  width: 100%;
+}
 }
 .address {
   grid-area: address;
@@ -633,6 +719,7 @@ nav ul li a {
 
 .contact-us .php-email-form input {
   padding: 10px 15px;
+  border: 1px solid #ccc;
 }
 
 .contact-us .php-email-form textarea {
@@ -657,6 +744,120 @@ footer {
   color: white;
   text-align: center;
   padding: 15px 0;
+}
+
+/* ================================================================
+About US page 
+============================================================= */
+/* About Us Section */
+.about-header {
+  background: linear-gradient(to right, #0b123a, #303a5c, #0b123a);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.about-header h1 {
+  font-size: 3rem;
+}
+
+.about-header p {
+  font-size: 1.2rem;
+  margin: 10px 0 0;
+}
+
+/* Mission Section */
+.mission {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 20px;
+  background: #f4f4f9;
+}
+
+.mission-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.mission-content h2 {
+  font-size: 2.5rem;
+  color: #1c2237;
+}
+
+.mission-content p {
+  font-size: 1.2rem;
+}
+
+.mission-image {
+  flex: 1;
+  text-align: center;
+}
+
+.mission-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Team Section */
+.team {
+  background: #0f1a43;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.team h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.team-member {
+  background: #1c2237;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.team-member img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.team-member h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.team-member p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  background: #1c2237;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 footer p {

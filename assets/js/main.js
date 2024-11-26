@@ -1,7 +1,8 @@
-// Mobile navbar
+// Select the mobile menu icon and navigation menu
 const mobileNavbar = document.querySelector('.mobile-navbar');
-const navLinks = document.querySelector('.nav-links'); 
+const nav = document.querySelector('nav');
 
+// Add a click event listener to the mobile menu icon
 mobileNavbar.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+  nav.classList.toggle('show');
 });

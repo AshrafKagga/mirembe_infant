@@ -775,7 +775,13 @@ About US page
   padding: 50px 20px;
   background: #f4f4f9;
 }
-
+@media(max-width:992px){
+  .mission{
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+}
 .mission-content {
   flex: 1;
   padding: 20px;
